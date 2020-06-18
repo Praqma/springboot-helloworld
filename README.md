@@ -2,22 +2,19 @@
 
 A simple hello world with spring boot to use with demo's. 
 
-## Pre-Req's
-
-You need maven 3 and java 8 installed.
+Exposes Hello World on 8080.
 
 ## Build
-You can build it with maven or with docker.
 
-* `mvn clean install`
-* 
+* `docker-compose build`
 
 ## Run
-You can run it with maven or with docker.
 
-### With Maven
-`mvn spring-boot:run`
+* `docker-compose up -d`
+* `docker run -p 8080:8080 praqma/hello-world:spring-boot-1.0.0`
 
-### Docker
+## Notes
+When making changes and you want to update the version. Just bump `HELLOWORLD_VERSION` in the `.env` file. 
 
+When you do `docker-compose build` it will pick up the version, pass it to maven for the build and tag the image appropriately.
 
