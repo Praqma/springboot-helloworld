@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  hello-world:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        - HELLOWORLD_VERSION=${HELLOWORLD_VERSION}
+    image: praqma/hello-world:spring-boot-${HELLOWORLD_VERSION}
+    container_name: "hello-world"
+    environment:
+      - HELLOWORLD_VERSION=${HELLOWORLD_VERSION}
+    ports:
+      - "8080:8080"
