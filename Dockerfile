@@ -24,6 +24,6 @@ COPY entrypoint.sh entrypoint.sh
 COPY --from=build "/target/helloworld-${HELLOWORLD_VERSION}.jar" .
 RUN chmod 700 helloworld-${HELLOWORLD_VERSION}.jar
 
-EXPOSE 8080
+EXPOSE 8085
 
 ENTRYPOINT ["sh", "entrypoint.sh"]
